@@ -90,7 +90,7 @@ Change the ``false`` to ``true`` and re-run the test.  After you are done, docum
 
 In this case the goal is for you to see that if you pass a value to the ``assert`` method, it will either ensure it is ``true`` and continue on, or fail if the statement is ``false``.
 
-### Running the tests automatically
+### Running the tests automatically (optional)
 
 <em>This section is optional.</em>
 
@@ -110,7 +110,7 @@ hopefully keep your focus on learning Ruby instead of on the command line.
 % watchr rake-source.watchr
 ```
 ###Final Notes
-If you want to learn (more) about TDD, check out our blog posts from previous workshops: [http://www.ryatta.com/refactoring-in-context/]
+If you want to learn (more) about TDD, check out our blog posts from previous workshops: [http://www.ryatta.com/category/development/workshops/]
 
 
 RubyKoans is released under a Creative Commons,
