@@ -3,11 +3,11 @@ Ruby Testing Workshop
 
 This repo contains an exercise for our fourth workshop presented by me, David Andrews. This workshop is about core Ruby and testing (although not TDD directly). For this session we have based our activities on Neo/Jim Weirich's Neo Ruby Koans project.
 
-We've stepped away from our standard "quick start" setup for TDD, and have used Neo's simpler testing framework. This will allow us to focus more on the writing correct tests and less on the larger code structure. It will allow new programmers to quickly get up to speed, and the sheer number  and variety of exercises should be enough to challenge advanced devs.
+We've stepped away from our standard "quick start" setup for TDD, and have used Neo's simpler testing framework. This will allow us to focus more on the writing correct tests and less on the larger code structure. It will allow new programmers to quickly get up to speed, and the sheer number and variety of exercises should be enough to challenge more advanced devs.
 
 ###Setup
 
-Here are the steps to get you started with the repo. We assume, naturally, that you have a working development machine with Ruby 1.9 or better on it (there are some parts of this repo that *require* Ruby 2+). At Ryatta Group we use rbenv, and so we've included some optional elements - just skip them if you're using rvm or are not versioning your Ruby.
+Here are the steps to get you started with the repo. We assume, naturally, that you have a working development machine with Ruby 1.9 or better on it (there are some parts of this repo that *require* Ruby 2+, so install/enable it if possible).
 
 ```sh
 % git clone git@github.com:k00ka/ruby-testing-workshop.git
@@ -26,6 +26,8 @@ Your bundle is complete!
 Use `bundle show [gemname]` to see where a bundled gem is installed.
 ```
 ######Note: if you use rbenv...
+At Ryatta Group we use rbenv, and so we've included some optional elements - just skip the instructions below if you're using rvm or are not versioning your Ruby. For rbenv users only: the repo will try to use Ruby 2.1.0 - change the file ``.rbenv-version`` to an installed version of Ruby, if you prefer, or install Ruby 2.1.0 using ``rbenv install``. All rbenv users should run the following after the bundle completes:
+
 ```sh
 % rbenv rehash
 ```
@@ -47,17 +49,12 @@ The goal is to learn the Ruby language, syntax, structure, and some common funct
 In TDD the mantra is <em>red, green, refactor</em>.
 Write a failing test based on a requirement and watch it fail (i.e. <em>red</em>), write the simplest code possible to make the test pass (<em>green</em>), then examine the code and consider if you can make it any better (<em>refactor</em>).
 
-When doing these exercises, the code being tested is demonstrating basic building blocks of Ruby, and therefore is already correct. Your job is to rework the tests to make them pass. Do not get confused - this is not TDD where the tests asses the correctness of the code, but an exercise designed to teach you similar useful skills where the tests need to be filled in by you.
-While doing these exercises you'll run the code and identify the first test which fails (<em>red</em>), correct the test so that it passes (<em>green</em>), and then take a moment to reflect on the specifics to see what it is teaching you and improve the code to better communicate its intent (<em>refactor</em>).
+When doing these exercises, the code being tested is demonstrating basic building blocks of Ruby, and therefore is already correct. Your job is to rework the tests to make them pass. Do not get confused - this is not TDD where the tests assess the correctness of the code, but an exercise designed to teach you similar useful skills where the tests need to be filled in by you to assert reality (existing Ruby core classes and methods).
+While doing these exercises you'll run the code and identify the first test which fails (<em>red</em>), correct the test so that it passes (<em>green</em>), and then take a moment to reflect on the specifics to see what it is teaching you and, in some cases, improve the code to better communicate its intent (<em>refactor</em>).
 
 ## Running the tests
 
-You can run the tests through ``rake``.
-```
-% cd ruby-testing-workshop
-% rake
-```
-The very first time you run the exercises you will see the following output:
+You can run the tests through ``rake``. The very first time you run the exercises you will see the following output:
 ```
 % rake
 (in ruby-testing-workshop)
@@ -77,13 +74,10 @@ The very first time you run the exercises you will see the following output:
     mountains are merely mountains
     your path thus far [X_________________________________________________] 0/280
 ```
-You have come to your first stage. Notice it is telling you where to look for
-the first solution:
+Notice it is telling you where to look for the first solution:
 ```
     Please meditate on the following code:
     about_asserts.rb:10:in `test_assert_truth'
-    path_to_enlightenment.rb:38:in `each_with_index'
-    path_to_enlightenment.rb:38
 ```
 Open the ``about_asserts.rb`` file and look at the first test:
 ```
@@ -92,14 +86,9 @@ Open the ``about_asserts.rb`` file and look at the first test:
       assert false                # This should be true
     end
 ```
-Change the ``false`` to ``true`` and re-run the test.  After you are
-done, think about what you are learning.  In this case, ignore everything except
-the method name (``test_assert_truth``) and the parts inside the method (everything
-before the ``end``).
+Change the ``false`` to ``true`` and re-run the test.  After you are done, document what you are learning.  In this case, ignore everything except the method name (``test_assert_truth``) and the parts inside the method (everything before the ``end``).
 
-In this case the goal is for you to see that if you pass a value to the ``assert``
-method, it will either ensure it is ``true`` and continue on, or fail if
-the statement is ``false``.
+In this case the goal is for you to see that if you pass a value to the ``assert`` method, it will either ensure it is ``true`` and continue on, or fail if the statement is ``false``.
 
 ### Running the tests automatically
 
