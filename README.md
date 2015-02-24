@@ -3,7 +3,7 @@ Ruby Testing Workshop
 
 This repo contains an exercise for our fourth workshop presented by me, David Andrews. This workshop is about core Ruby and testing (although not TDD directly). For this session we have based our activities on Neo/Jim Weirich's Neo Ruby Koans project.
 
-We've stepped away from our standard "quick start" setup for TDD, and have used Neo's simpler testing framework. This will allow us to focus more on the writing correct tests and less on the larger code structure. It will allow new programmers to quickly get up to speed, and the sheer number of challenges should be enough to challenge advanced devs.
+We've stepped away from our standard "quick start" setup for TDD, and have used Neo's simpler testing framework. This will allow us to focus more on the writing correct tests and less on the larger code structure. It will allow new programmers to quickly get up to speed, and the sheer number  and variety of exercises should be enough to challenge advanced devs.
 
 ###Setup
 
@@ -33,12 +33,12 @@ You are ready!
 
 ###The Exercise
 
-The exercises are broken out into areas by file, hashes are covered in +about_hashes.rb+, order in the +path_to_enlightenment.rb+ file.
+The exercises are broken out into areas by file, hashes are covered in ``about_hashes.rb``, order in the ``path_to_enlightenment.rb`` file.
 
 Each exercise builds up your knowledge of Ruby and builds upon itself. The tests will stop at the first place you need to correct.
 
 Some exercises simply need to have the correct answer substituted for an incorrect one.
-Some, however, require that you to supply more of your own code.  If you see the method +__+ (a double underscore) in the source, it is a hint to you to supply your own code in order to make it work correctly.
+Some, however, require that you to supply more of your own code.  If you see the method ``__`` (a double underscore) in the source, it is a hint to you to supply your own code in order to make it work correctly.
 
 The goal is to learn the Ruby language, syntax, structure, and some common functions and libraries. By basing the exercises on tests, you'll get practice with test writing while expanding your Ruby knowledge. Testing is essential in your quest to learn and do great things in Ruby.
 
@@ -52,13 +52,13 @@ While doing these exercises you'll run the code and identify the first test whic
 
 ## Running the tests
 
-You can run the tests through +rake+.
-
+You can run the tests through ``rake``.
+```
 % cd ruby-testing-workshop
 % rake
-
+```
 The very first time you run the exercises you will see the following output:
-
+```
 % rake
 (in ruby-testing-workshop)
     AboutAsserts#test_assert_truth has damaged your karma.
@@ -76,51 +76,50 @@ The very first time you run the exercises you will see the following output:
 
     mountains are merely mountains
     your path thus far [X_________________________________________________] 0/280
-
+```
 You have come to your first stage. Notice it is telling you where to look for
 the first solution:
-
+```
     Please meditate on the following code:
     about_asserts.rb:10:in `test_assert_truth'
     path_to_enlightenment.rb:38:in `each_with_index'
     path_to_enlightenment.rb:38
-
-Open the +about_asserts.rb+ file and look at the first test:
-
+```
+Open the ``about_asserts.rb`` file and look at the first test:
+```
     # We shall contemplate truth by testing reality, via asserts.
     def test_assert_truth
       assert false                # This should be true
     end
-
-Change the +false+ to +true+ and re-run the test.  After you are
+```
+Change the ``false`` to ``true`` and re-run the test.  After you are
 done, think about what you are learning.  In this case, ignore everything except
-the method name (+test_assert_truth+) and the parts inside the method (everything
-before the +end+).
+the method name (``test_assert_truth``) and the parts inside the method (everything
+before the ``end``).
 
-In this case the goal is for you to see that if you pass a value to the +assert+
-method, it will either ensure it is +true+ and continue on, or fail if
-the statement is +false+.
+In this case the goal is for you to see that if you pass a value to the ``assert``
+method, it will either ensure it is ``true`` and continue on, or fail if
+the statement is ``false``.
 
-=== Running the Koans automatically
+### Running the tests automatically
 
 <em>This section is optional.</em>
 
 Normally the path to enlightenment looks like this:
-
-% cd ruby_koans
+```
 % rake
-# edit file
+ # edit file
 % rake
-# edit file
+ # edit file
 % rake
-# etc...
-
+ # etc...
+```
 If you prefer, you can keep the koans running in the background so that after you
 make a change in your editor, the koans will immediately run again. This will
 hopefully keep your focus on learning Ruby instead of on the command line.
-
+```
 % watchr rake-source.watchr
-
+```
 ###Final Notes
 If you want to learn (more) about TDD, check out our blog posts from previous workshops: [http://www.ryatta.com/refactoring-in-context/]
 
